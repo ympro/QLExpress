@@ -1,6 +1,7 @@
 package com.ql.util.express.bugfix;
 
 import com.ql.util.express.parse.WordSplit;
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -14,18 +15,17 @@ public class CrashTest {
 
 
     @Test
-    public void helloworld()
-    {
+    public void helloworld() {
 
     }
 
 
-    public static String[] splitWord={
-            "~","&","|","<<", ">>",//位操作
-            "+", "-","*", "/", "%","++", "--",//四则运算：
-            ".",",",":",";","(", ")", "{", "}", "[", "]","?",//分隔符号
-            "!","<", ">", "<=", ">=", "==","!=","&&","||",//Boolean运算符号
-            "=","/**","**/"
+    public static String[] splitWord = {
+            "~", "&", "|", "<<", ">>",//位操作
+            "+", "-", "*", "/", "%", "++", "--",//四则运算：
+            ".", ",", ":", ";", "(", ")", "{", "}", "[", "]", "?",//分隔符号
+            "!", "<", ">", "<=", ">=", "==", "!=", "&&", "||",//Boolean运算符号
+            "=", "/**", "**/"
     };
 
     /**
@@ -53,7 +53,7 @@ public class CrashTest {
 
         private CyclicBarrier barrier;
 
-        public Worker(CyclicBarrier b){
+        public Worker(CyclicBarrier b) {
             this.barrier = b;
         }
 

@@ -2,6 +2,7 @@ package com.ql.util.express.bugfix;
 
 import com.ql.util.express.ExpressRunner;
 import com.ql.util.express.InstructionSet;
+
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -51,15 +52,14 @@ public class SerializeTest {
         testSerialize(is3);
 
     }
-    
-    private void testSerialize(InstructionSet is)
-    {
+
+    private void testSerialize(InstructionSet is) {
         int len = is.getInstructionLength();
-        for(int i=0;i<len;i++){
+        for (int i = 0; i < len; i++) {
             System.out.println(is.getInstruction(i));
             encode(is.getInstruction(i));
         }
-        
+
     }
 
     private byte[] encode(Object object) {
@@ -85,27 +85,27 @@ public class SerializeTest {
         }
         return result;
     }
-    
-    public class TestExpress implements Serializable{
-        
+
+    public class TestExpress implements Serializable {
+
         public int getScore(TestData testInfo) {
             if (!"None".equals(testInfo.getName()))
                 return 600;
             return 300;
         }
     }
-    
+
     public class TestData {
-        
+
         private String name = "None";
-        
+
         public TestData() {
         }
-        
+
         TestData(String name) {
             this.name = name;
         }
-        
+
         public String getName() {
             return this.name;
         }
